@@ -73,9 +73,9 @@ table {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: small;
 }
-table tr:nth-of-type(odd) td {color: orange;}
+table tr:nth-of-type(odd) td {color: orangered;}
 td {
-	width: 25%;
+	width: 24%;
 	float: left;
 	text-align: center;
 	/*border-width: 1px;
