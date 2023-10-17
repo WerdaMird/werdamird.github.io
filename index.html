@@ -1,186 +1,74 @@
-<html> 
-<head> 
-	<title>Welcome to Werda Holdings</title>
-	<link rel = "stylesheet" type = "text/css" href = "Holonet/defaultstyle.css">
-</head>
-<body>
-	<header>
-		<img src = "Holonet/images/werda_holdings_banner.png">
-	</header>
-	<nav>
-		<ul>
-			<li><a href = "#home">Home </a></li>
-      			<li><a href = "#about">About us</a></li>
-      			<li><a href = "#recruit">Recruitment</a></li>
-      			<li><a href = "#sales">Sales</a></li>
-      			<li><a href = "#services">Services</a></li>
-     			<li><a href = "#banking">Banking</a></li>
-      			<li><a href = "#middles">Accepted Middles</a></li>
-      			<li><a href = "#terms">Terms of Services</a></li>
-      			<li><a href = "#references">References</a></li>
-			<li><iframe style="width: 185px; height: 17px; " name="cgt" marginheight="0" marginwidth="0" src="http://www.swcombine.com/rules/cgt.php?size=10&bg=1A3F66&col=FFA500" scrolling="no" frameborder="0"></iframe></li>
-		</ul>
-	</nav>
-		<div id = "contentbox">
-			<h2 id="about">About us</h2>
-  			<h3>A Supplier of Smalls Arms</h3>
-  				<p>WERDA HOLDINGS (or WH for short) is one of the most famous and largest weapon industrialist firms in the entire galaxy. When a swift and reliable blaster is the only thing standing between you and a vile band of pirates, this is the shop to buy from.</p>
-  				<p>Werda Holdings offers one of the widest range of weapons and gear in the known galaxy. Choose from over 60 permanently available products. All of WH's products are cutting edge technology, boast an outstanding reliability as well as quality, and come with a life-time guarantee. We deal with all political sides, freelancers, companies and governments.</p>
- 				<p>Our engineers believe that achieving product excellence requires rising above our competitors by developing superior designs and manufacturing them with outstanding processes and excellent materials. Although the quality is exceptional the prices still aim at the lower end of the pricing scale.</p>
-  				"Hokey religions and ancient weapons are no match for a good blaster at your side." Unknown Smuggler
-  			<h3>History</h3>
-  				<p>Werda Holdings was founded early Year 16 as Werda Investments by the the Mandalorian trader Werda Mird. At Day 213 in Year 16 it was renamed to Werda Holdings and became publicly known outside Mandalore space when it registered as galaxy-wide operating company. A new trading organisation was born.</p>
-  				<p>Formerly specialised in the trading of valued assets like ships or stocks and investments, the company changed more and more it's buisness: After signing contracts with some of the most advanced R&D companies in small arms and personal gear markets, Werda Holdings maintained several factory cities to meet the demands of customers in this niche.</p>
- 	 			<p>Later on that same year, the company's leader was heavily wounded on an routine action to capture some bandits. Even though he tried to manage some of the buisness once he was out of the hospital and recovered, the profits of the company suffered heavily since there was no replacement for him. On Year 17, Day 78 Werda Holdings retired from Galactic Commerce Registry due to unprofitability and provided a closing-sale of the already produced goods over the final months.</p>
-  				<p>Now that Werda Mird is finally recovered, the company is looking ahead and hopes to become even bigger than before. A re-registration as a galaxy-wide company hasn't happened yet, but it's just a matter of time now that profits are growing again.</p>
+<html>
+	<head>
+		<script>
+			function getStyle(x,y){
+				return "margin-top:"+(500-y-2)+"px;"+"margin-left:"+(500+x-2)+"px;";
+			}
+			function createSystems() {
+			  let map = document.getElementById("mapcontainer");
+			  for (let sys of systems){
+			    let elem = document.createElement('a');
+			    elem.setAttribute("href","/");
+			    elem.setAttribute("title",sys.name);
+			    elem.setAttribute("style",getStyle(sys.x,sys.y));
+			    elem.classList.add("subtleroomoverlay");
+			    elem.classList.add("questplanet");
+			    map.appendChild(elem);
+			  }
+			}
+			var systems = [
+			  {name:"Okyaab",x:125,y:215},
+			  {name:"Horuz",x:14,y:307}
+			];
+			
+			createSystems();
+		</script>
+		<style>
+			.roommap {
+			  background-color:#000;
+			 position:relative;
+			}
+			.subtleroomoverlay {
+			 position:absolute;
+			 top:2px;
+			 left:2px;
+			 z-index:400
+			}
+			.questplanet {
+			 background:#28f50a;
+			 border:2px solid #005000;
+			 box-shadow:0 0 6px 2px #05a505
+			}
+			.combatplanet,
+			.darkplanet,
+			.questplanet {
+			 height:6px;
+			 width:6px;
+			 border-radius:25px;
+			 display:inline-block;
+			 background:#46dcff;
+			 border:2px solid #001e3c;
+			 box-shadow:0 0 6px 2px #0f78a0
+			}
+			.combatplanet {
+			 background:#f5280a;
+			 border:2px solid #500000;
+			 box-shadow:0 0 6px 2px #a50505
+			}
+			.darkmap {
+			 position:relative;
+			 width:1000px;
+			 height:1000px;
+			 margin:0 auto
+			}
+			.darkmap a {
+			 position:absolute
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mapcontainer" class="roommap">
+		  <img id="politicalMap" src="https://www.swcombine.com/rules/the_universe/galaxy_map/galaxyMap.php?mode=high&political=1">
 		</div>
-		</div>
-		<div id = "contentbox">
-			<h2 id="recruit">Recruitment</h2>
-  				<p>Werda Holdings is always on the lookout for new members, ranging from all kind of experience like veterans to newer members looking to learn the ways of the galaxy in a small, family-like and supportive community. Players looking for an opportunity should talk to our Recruitment staff to clear up your minds, ask for advice, and choose your future careers. We are currently seeking personnel in the following fields:</p><ul>
-  					<li>Logistics<ul>
-    						<li>1 Logistical Manager(High Activity in Game and IRC/Discord), At least 6 Months of Experience in Piloting</li>
-    						<li>Several Heavy Cargo Freighter Pilots</li>
-						<li>Few Small Freighter Pilots for Jobs need done fast</li></ul></li>
-  					<li>Production<ul>
-  						<li>1-2 Production Managers starting Factories and Shipyards. High Managemenent skill is Bonus as well as some Experience in Production and some higher Activity</li></ul>
-  					<li>Construction Engineers<ul>
-    						<li>Several Construction Workers to build up new Facilities, Cities and Space Stations</li> </ul></li>
-  					<li>Security Forces<ul>
-  						<li>Ground Officers</li>
-  						<li>Escort Fighter Pilots</li></ul></li>
-					</ul>
-				<h3>Interested in joining Werda Holdings:</h3><ul>
-  					<li>Send a <a href="http://www.swcombine.com/members/messages/index.php?mode=sendfromProfile&tHand=Werda+Mird">Message to Werda Mird</a> including:<ul>
-    						<li>Previous Factions (if any)</li>
-    						<li>Position you desire(can change easily)</li>
-    						<li>Personal Goals</li>
-    						<li>E-mail address(optional)</li>
-    						<li>Discord Nick(optional)</li></ul></li>
-  					<li>Optional: Join <a href="https://discord.gg/Z8BpVcS">Discord</a> and try to chat to someone from your new Faction.</li>
-				</ul>
-		</div>
-		<div id = "contentbox">
-			<h2 id="sales">Sales</h2>
-  				<h3>Single Sales</h3><table>
-   					<tr><td>Asset</td><td>Location</td><td>Price</td></tr>
-    					<tr><td>YV-666</td><td>-82, -82</td><td></td></tr>
-    					<tr><td>ETA-5</td><td>Vinsoth 130, 257</td><td></td></tr>
-    					<tr><td>ETA-5</td><td>Vinsoth 130, 257</td><td></td></tr>
-    					<tr><td>ETA-5</td><td>Vinsoth 130, 257</td><td></td></tr>
-    					<tr><td>ETA-5</td><td>Vinsoth 130, 257</td><td></td></tr>
-					<tr><td>Corona Frigate</td><td>Okyaab 125, 215</td><td></td></tr></table>
-  				<h3>Baragwin Armory</h3>
-   	 				<p>Each Container will be carried by an NPC Resident on the Darkness controlled Baragwin Homeworld for secure Pickup. As soon you've pickuped the Items you can sell the NPC back for 5,000 Cr(this collateral is already included in the price below)</p><table>
-    					<tr><b><td>Item Type</td><td>Items per Container</td><td>Container available</td><td>Price per Container</td></b></tr>
-    					<tr><td>Amphibian Survival Backpack</td><td>11</td><td>46</td><td>Cr</td></tr>
-    					<tr><td>Amphibian Survival Mask</td><td>11</td><td>46</td><td>Cr</td></tr>
-    					<tr><td>Amphibian Survival Suit</td><td>11</td><td>46</td><td>Cr</td></tr>
-    					<tr><td>Arctic Survival Helmet</td><td>10</td><td>30</td><td>Cr</td></tr>
-   					<tr><td>Arctic Survival Suit</td><td>10</td><td>30</td><td>Cr</td></tr>
-    					<tr><td>AXM-50</td><td>1</td><td>1</td><td>Cr</td></tr>
-    					<tr><td>B-22</td><td>13</td><td>4</td><td>Cr</td></tr>
-    					<tr><td>Bacta-Refill</td><td>10</td><td>1</td><td>Cr</td></tr>
-    					<tr><td>Battle Axe</td><td>10</td><td>2</td><td>Cr</td></tr>
-    					<tr><td>BD-1 Cutter</td><td>6</td><td>4</td><td>Cr</td></tr>
-    					<tr><td>C-M Frag Storm Shotgun</td><td>1</td><td>1</td><td>Cr</td></tr>
-    					<tr><td>C-M Frag Storm Shotgun</td><td>7</td><td>57</td><td>Cr</td></tr>
-    					<tr><td>Camouflage Scout Armor</td><td>8</td><td>28</td><td>Cr</td></tr>
-    					<tr><td>Camouflage Scout Helmet</td><td>8</td><td>28</td><td>Cr</td></tr>
-    					<tr><td>Corellian Powersuit Armor</td><td>8</td><td>1</td><td>Cr</td></tr>
-    					<tr><td>CS-12 Stun Master</td><td>1</td><td>1</td><td>Cr</td></tr>
-    					<tr><td>CS-12 Stun Master</td><td>20</td><td>10</td><td>Cr</td></tr>
-    					<tr><td>DD6</td><td>13</td><td>4</td><td>Cr</td></tr>
-    					<tr><td>DDC Defender</td><td>1</td><td>1</td><td>Cr</td></tr>
-    					<tr><td>DDC Defender</td><td>13</td><td>3</td><td>Cr</td></tr>
-    					<tr><td>DL-44</td><td>13</td><td>2</td><td>Cr</td></tr>
-    					<tr><td>Electronic Lock Breaker</td><td>16</td><td>50</td><td>Cr</td></tr>
-    					<tr><td>EMP Grenade</td><td>1</td><td>1</td><td>Cr</td></tr>
-    					<tr><td>EMP Grenade</td><td>11</td><td>60</td><td>Cr</td></tr>
-    					<tr><td>Jawa Ionisation Blaster</td><td>11</td><td>5</td><td>Cr</td></tr>
-   					<tr><td>K-43</td><td>1</td><td>1</td><td>Cr</td></tr>
-    					<tr><td>Large Backpack</td><td>7</td><td>15</td><td>Cr</td></tr>
-    					<tr><td>MG-15</td><td>7</td><td>5</td><td>Cr</td></tr>
-    					<tr><td>Multiple Sensor Packages</td><td>5</td><td>50</td><td>Cr</td></tr>
-    					<tr><td>Portable Power Fusion Generators</td><td>5</td><td>5</td><td>Cr</td></tr>
-    					<tr><td>Relby</td><td>13</td><td>5</td><td>Cr</td></tr>
-    					<tr><td>Restraining Bolt</td><td>22</td><td>85</td><td>Cr</td></tr>
-    					<tr><td>RPS-6 Rocket Launcher</td><td>4</td><td>10</td><td>Cr</td></tr>
-    					<tr><td>Sub Space Radio</td><td>4</td><td>10</td><td>Cr</td></tr>
-    					<tr><td>Sword</td><td>10</td><td>4</td><td>Cr</td></tr>
-    					<tr><td>Telltrig-7</td><td>11</td><td>5</td><td>Cr</td></tr>
-    					<tr><td>Thermal Survival Helmet</td><td>8</td><td>30</td><td>Cr</td></tr>
-    					<tr><td>Thermal Survival Suit</td><td>8</td><td>30</td><td>Cr</td></tr>
-    					<tr><td>Vacuum Survival Backpack</td><td>8</td><td>30</td><td>Cr</td></tr>
-    					<tr><td>Vacuum Survival Helmet</td><td>8</td><td>30</td><td>Cr</td></tr>
-    					<tr><td>Vacuum Survival Suit</td><td>8</td><td>30</td><td>Cr</td></tr>
-    					<tr><td>Vibroblade</td><td>20</td><td>30</td><td>Cr</td></tr>
-    					<tr><td>W-2X Wristlauncher</td><td>14</td><td>5</td><td>Cr</td></tr>
-					<tr><td>Zenji Needles</td><td>50</td><td>1</td><td>Cr</td></tr>
-			</table>
-		</div>
-		<div id = "contentbox">
-			<h2 id="services">Services</h2>
-  				<h3>Trade Management</h3>
-    					<p> There is something you're looking to get rid of? Or there's something you're looking to buy, but you can't find anyone selling it? Hire the experienced Traders from Werda Holdings to go after it. You name us the Maximum Price you're willing to pay/Minimum Price you want to achieve for an Asset. Now you've got the two following options: Either pay us an agreed fixed Fee if we successfully manage the Trade or simply give us half of the Profit above/below the Price you named. In any case we'll charge at least 500,000 Cr.</p>
-		</div>
-		<div id = "contentbox">
-			<h2 id="banking">Banking</h2>
-  				<h3>Loans</h3>
-  					<p>Loans are not offered all the time and any loan maybe individual in details. Talk to us and what you are planning and you could get support!</p><ul>
-  					<li>Talk to Werda Mird and tell him how many credits you want to borrow (usually max. 50,000,000 at a time) and which Assets you have that you could provide as collateral and how long you think you need the credits for. We'll usually want something as collateral that is slightly more v valuable than the amount you want to borrow. But if you have a good reputation you can talk to us about anything.</li>
-  					<li>Depending on your details we'll offer you an Interest Rate and accept or decline the collateral for the requested amount. So you can either lower the amount or offer a higher value Collateral</li>
-  					<li>If agreed on the details you need to send the Collateral to Werda Mird. You'll still be assigned as Commander and can make regular use the assets used as collateral. As soon the collateral is received, you'll be sent the credits.</li>
-  					<li>You need to send at least the Interest Rate every Week. You're however free to pay off some of the Money additionally to lower Interest for next week or totally pay off the debt to receive back the collateral.</li>
-  					<li>If you fail to send the Interest Rate we'll first look to remove it from already payed off Money. If there is none, we'll unassign you and after 2 weeks, we'll sell the collateral if there is no contact from you.</li></ul>
-		</div>
-		<!---<div id = "contentbox">
-			<h1>Investments:</h1>
-			<ul>
-				<li>Purchase Price for an Invesmtent Share is 100.000 Credits</li>
-				<li>The Dividend will be based on Profits and is variate heavily so.</li>
-				<li>Minimal dividend of 3.000 Credits for each Share(3%) monthly is guaranted!</li>
-				<li>Dividend will get payed out usually in first Week of a Month for the last month.</li>
-				<li>There is no limit how many Investment Shares can purchased by a single Person.</li>
-			</ul>
-		</div>-->
-		<div id = "contentbox">
-			<h2 id="middles">Accepted Middles</h2>
-  				<h3>For Trades up to 250,000,000 Cr</h3><ul>
-    					<li>Bossive Ketwol</li>
-    					<li>Dac Kain</li>
-    					<li>Gilbert Reed</li>
-    					<li>Guybrush Threepwood</li>
-    					<li>Kai Oryk</li>
-    					<li>Kerri Manchester</li>
-    					<li>Korlan Mereel</li>
-   					<li>Loren Zolo</li>
-    					<li>Syn</li>
-    					<li>Tengri Lethas</li>
-    					<li>Tomas O`Cuinn</li>
-    					<li>Werda Mird</li></ul>
-  				<h3>For High Value Trades:</h3><ul>
-    					<li>Bossive Ketwol</li>
-    					<li>Dac Kain</li>
-    					<li>Gilbert Reed</li>
-					<li>Werda Mird</li></ul>
-		</div>
-		<div id = "contentbox">
-			<h2 id="terms">Terms of Services</h2>
-  				<h3>Werda Holdings have the right to:</h3><ul>
-    					<li>refuse to deal with anyone without reason, and;</li>
-   	 				<li>ask anyone by default to send first or use a middle on its list published by WH.</li>
-				</ul>
-  				<h3>Any Customer of Werda Holdings has the right to:</h3><ul>
-    					<li>ask to use a middle on the list published by WH,</li>
-    					<li>ask for the location of items before purchasing (aside some Exeptions in DS. In which case just a rounded Coordinate must be named</li>
-    					<li>Publish Feedback (in this Thread) if they still have used Services by WH. This count for positive as negative Feedbacks as well. If you don't use tge Services <b>YOURSELF</b> yet, please don't post Feedback!</li>
-				</ul>
-		</div>
-		<div id = "contentbox">
-			<h2 id="references">References</h2>
-			<p>Here are some of our References:</p>
-		</div>
-</body>
-</html> 
-
+	</body>
+</html>
