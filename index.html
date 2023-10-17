@@ -4,11 +4,11 @@
 			function parseURL(){
 				const urlParams = new URLSearchParams(window.location.search);
 				if (urlParams.get("galaxy")=="yt"){
-					createSystems(
+					createSystems([
 						{name:"Okyaab",x:125,y:215},
 						{name:"Horuz",x:14,y:307},
 						{name:"Shogun",x:170,y:(-350)}
-					);
+					]);
 				}
 			}
 			function getStyle(x,y){
