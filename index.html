@@ -1,12 +1,22 @@
 <html>
 	<head>
 		<script>
+			function parseURL(){
+				const urlParams = new URLSearchParams(window.location.search);
+				if (urlParams.get("galaxy")=="yt"){
+					createSystems(
+						{name:"Okyaab",x:125,y:215},
+						{name:"Horuz",x:14,y:307},
+						{name:"Shogun",x:170,y:(-350)}
+					);
+				}
+			}
 			function getStyle(x,y){
 				return "margin-top:"+(500-y-2)+"px;"+"margin-left:"+(500+x-2)+"px;";
 			}
-			function createSystems() {
+			function createSystems(systemList) {
 			  let map = document.getElementById("mapcontainer");
-			  for (let sys of systems){
+			  for (let sys of systemList){
 			    let elem = document.createElement('a');
 			    elem.setAttribute("href","/");
 			    elem.setAttribute("title",sys.name);
@@ -16,13 +26,8 @@
 			    map.appendChild(elem);
 			  }
 			}
-			var systems = [
-				{name:"Okyaab",x:125,y:215},
-				{name:"Horuz",x:14,y:307},
-				{name:"Shogun",x:170,y:(-350)}
-			];
 			function init(){
-				createSystems();
+				parseURL();
 			}
 		</script>
 		<style>
