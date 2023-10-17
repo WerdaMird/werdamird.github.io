@@ -20,8 +20,9 @@
 			  {name:"Okyaab",x:125,y:215},
 			  {name:"Horuz",x:14,y:307}
 			];
-			
-			createSystems();
+			function init(){
+				createSystems();
+			}
 		</script>
 		<style>
 			.roommap {
@@ -66,7 +67,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onload="init()">
 		<div id="mapcontainer" class="roommap">
 		  <img id="politicalMap" src="https://www.swcombine.com/rules/the_universe/galaxy_map/galaxyMap.php?mode=high&political=1">
 		</div>
