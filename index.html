@@ -1,23 +1,29 @@
-<html>
-	<head>
-		<script>
-			function parseURL(){
-				const urlParams = new URLSearchParams(window.location.search);
-				if (urlParams.get("galaxy")=="yt"){
-					createSystems([
-						{name:"Okyaab - Motors",x:125,y:215},
-						{name:"Horuz - Dukha Industrial",x:14,y:307},
-						{name:"Shogun - Motors+RA",x:170,y:(-350)},
-						{name:"Malachor - Motors+TSL?",x:337,y:348},
-						{name:"Kessel - Motors?",x:396,y:72},
-						{name:"Pyrshak - Motors",x:136,y:12},
-						{name:"Candoria - Mecrotia",x:(-82),y:(-80)},
-						{name:"Tatoo - Jawas",x:296,y:(-248)},
-						{name:"Woldona - Blue Star",x:370,y:(-230)},
-						{name:"Manda - MandalHypernautics",x:312,y:(-168)}
-					]);
-				}
-			}
+<html><head><script>
+const urlParams = new URLSearchParams(window.location.search);
+function redirect(url){window.location.href = url;window.location.replace(url);}
+function redirectRoutes(){
+	if(urlParams.get("url")=="VPY+NE"){redirect("https://www.swcombine.com/members/inventory2/index.php?entityType=5&InvID=540&InvType=2&Mode=3&StartRow=0&TotalRows=100&View=2&option[0][type]=19&option[0][values][0][0]=1&option[0][values][0][1]=248552&order[2048][0]=1&order[2048][1]=1&order[1][0]=2&order[2][0]=3"}
+}
+
+</script>
+<script>
+function parseURL(){
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get("galaxy")=="yt"){
+createSystems([
+{name:"Okyaab - Motors",x:125,y:215},
+{name:"Horuz - Dukha Industrial",x:14,y:307},
+{name:"Shogun - Motors+RA",x:170,y:(-350)},
+{name:"Malachor - Motors+TSL?",x:337,y:348},
+{name:"Kessel - Motors?",x:396,y:72},
+{name:"Pyrshak - Motors",x:136,y:12},
+{name:"Candoria - Mecrotia",x:(-82),y:(-80)},
+{name:"Tatoo - Jawas",x:296,y:(-248)},
+{name:"Woldona - Blue Star",x:370,y:(-230)},
+{name:"Manda - MandalHypernautics",x:312,y:(-168)}
+]);
+}
+}
 			function getStyle(x,y){
 				return "margin-top:"+(500-y-2)+"px;"+"margin-left:"+(500+x-2)+"px;";
 			}
