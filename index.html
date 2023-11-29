@@ -2,7 +2,15 @@
 const urlParams = new URLSearchParams(window.location.search);
 function redirect(url){window.location.href = url;window.location.replace(url);}
 function redirectRoutes(){
-	if(urlParams.get("url")=="VPY-NE"){redirect("https://www.swcombine.com/members/inventory2/index.php?entityType=5&InvID=540&InvType=2&Mode=3&StartRow=0&TotalRows=100&View=2&option[0][type]=19&option[0][values][0][0]=1&option[0][values][0][1]=248552&order[2048][0]=1&order[2048][1]=1&order[1][0]=2&order[2][0]=3")}
+	function getInventoryTagURL(tagId){return "https://www.swcombine.com/members/inventory2/index.php?entityType=5&InvID=540&InvType=2&Mode=3&StartRow=0&TotalRows=100&View=2&option[0][type]=19&option[0][values][0][0]=1&option[0][values][0][1]="+tagId+"&order[2048][0]=1&order[2048][1]=1&order[1][0]=2&order[2][0]=3";}
+	if(urlParams.get("url")=="VPY-NW"){redirect(getInventoryTagURL(248551))};
+	if(urlParams.get("url")=="VPY-N"){redirect(getInventoryTagURL(248187))};
+	if(urlParams.get("url")=="VPY-NE"){redirect(getInventoryTagURL(248552))};
+	if(urlParams.get("url")=="VPY-W"){redirect(getInventoryTagURL(248553))};
+	if(urlParams.get("url")=="VPY-E"){redirect(getInventoryTagURL(248554))};
+	if(urlParams.get("url")=="VPY-SW"){redirect(getInventoryTagURL(248555))};
+	if(urlParams.get("url")=="VPY-S"){redirect(getInventoryTagURL(248556))};
+	if(urlParams.get("url")=="VPY-SE"){redirect(getInventoryTagURL(248557))};
 }
 redirectRoutes();
 </script>
